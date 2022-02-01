@@ -1,0 +1,17 @@
+﻿@model IEnumerable<WebApp.Models.Predpr.Factory>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="table">
+    <table>
+        <tr>
+            <td>Наименование</td><td>Дата регистрации</td><td>Дата исключения</td><td>Рег. номер</td><td>Состояние</td><td>Орган принявший решение о создании</td><td>Способ исключения</td><td>Номер решения об исключении</td><td>Орган принявший решение об исключении</td><td>Текущий орган учета</td>
+        </tr>
+        @foreach (var factory in Model)
+        {
+            <tr>
+                <td>@factory.vnaim</td><td>@factory.dfrom</td><td>@factory.dto</td><td>@factory.ngrn</td><td>@factory.nsi00219.vnsostk</td><td>@(factory.nsi00212CRT==null?null:factory.nsi00212CRT.vnuzp)</td><td>@(factory.nsi00208==null?null:factory.nsi00208.vnscrtp)</td><td>@factory.vnrlkv</td><td>@(factory.nsi00212LKV==null?null:factory.nsi00212LKV.vnuzp)</td><td>@(factory.nsi00212==null?null:factory.nsi00212.vnuzp)</td>
+            </tr>
+        }
+    </table>
+</div>
